@@ -24,7 +24,7 @@ class DataTransformation:
 
     def get_data_transformer_object(self):
         '''
-        This function si responsible for data trnasformation
+        This function is responsible for data trnasformation
         
         '''
         try:
@@ -39,13 +39,13 @@ class DataTransformation:
 
             num_pipeline= Pipeline(
                 steps=[
-                ("imputer",SimpleImputer(strategy="median")),
+                ("imputer",SimpleImputer(strategy="median")),    #missing value
                 ("scaler",StandardScaler())
 
                 ]
             )
 
-            cat_pipeline=Pipeline(
+            cat_pipeline=Pipeline(                 #categorical variables
 
                 steps=[
                 ("imputer",SimpleImputer(strategy="most_frequent")),
